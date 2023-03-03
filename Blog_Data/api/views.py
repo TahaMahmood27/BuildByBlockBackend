@@ -27,4 +27,5 @@ def getBlog(request):
     serializer = BlogSerializer(blogs, many=True)
     return Response(serializer.data)
 
+
 # Create your views here.
