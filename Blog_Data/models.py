@@ -10,9 +10,4 @@ class Blog(models.Model):
     description = models.TextField(null=False)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            user = get_user_model().get_current()
-            self.auther = user
-        super().save(*args, **kwargs)
+   
