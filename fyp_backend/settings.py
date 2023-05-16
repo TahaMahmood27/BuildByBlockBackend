@@ -54,16 +54,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'Blog_Data.apps.BlogDataConfig',
+    
     'corsheaders',
-    'rest_framework_simplejwt.token_blacklist',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    
+    'Blog_Data.apps.BlogDataConfig',
+    'BlockChain.apps.BlockchainConfig',
 ]
 
 REST_FRAMEWORK = {
     
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
     

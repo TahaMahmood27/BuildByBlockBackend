@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 
 class Blog(models.Model):
@@ -9,3 +10,9 @@ class Blog(models.Model):
     description = models.TextField(null=False)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
+    
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            user = get_user_model().get_current()
+            self.auther = user
+        super().save(*args, **kwargs)
