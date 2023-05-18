@@ -5,7 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 ALLOWED_HOSTS = ['*']
-DEBUG = False
+DEBUG = True
 
 DATABASES = {
     'default': {

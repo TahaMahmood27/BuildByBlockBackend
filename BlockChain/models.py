@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 class BlockChain(models.Model):
     file = models.FileField(upload_to='blockchain/')
     upload_date = models.DateField(auto_now_add=True)
+    
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.BooleanField(default=False)
 
